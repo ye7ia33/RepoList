@@ -37,6 +37,7 @@
 		A84C07CA275170EC005A35AD /* RepositoryTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07C9275170EC005A35AD /* RepositoryTypeTest.swift */; };
 		A84C07CC27517395005A35AD /* CodableHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07CB27517395005A35AD /* CodableHandlerTest.swift */; };
 		A84C07CE2751745F005A35AD /* ReadLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07CD2751745F005A35AD /* ReadLocalData.swift */; };
+		A84C07D0275175A5005A35AD /* ReadLocalDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07CF275175A5005A35AD /* ReadLocalDataTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		A84C07C9275170EC005A35AD /* RepositoryTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTypeTest.swift; sourceTree = "<group>"; };
 		A84C07CB27517395005A35AD /* CodableHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableHandlerTest.swift; sourceTree = "<group>"; };
 		A84C07CD2751745F005A35AD /* ReadLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadLocalData.swift; sourceTree = "<group>"; };
+		A84C07CF275175A5005A35AD /* ReadLocalDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadLocalDataTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				A84C07622750D919005A35AD /* RepoListTests.swift */,
 				A84C07C9275170EC005A35AD /* RepositoryTypeTest.swift */,
 				A84C07CB27517395005A35AD /* CodableHandlerTest.swift */,
+				A84C07CF275175A5005A35AD /* ReadLocalDataTest.swift */,
 			);
 			path = RepoListTests;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				A84C07632750D919005A35AD /* RepoListTests.swift in Sources */,
 				A84C07CA275170EC005A35AD /* RepositoryTypeTest.swift in Sources */,
 				A84C07CC27517395005A35AD /* CodableHandlerTest.swift in Sources */,
+				A84C07D0275175A5005A35AD /* ReadLocalDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
