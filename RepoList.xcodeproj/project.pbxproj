@@ -36,6 +36,7 @@
 		A84C07C627513B71005A35AD /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C07C527513B71005A35AD /* ServerRequest.m */; };
 		A84C07CA275170EC005A35AD /* RepositoryTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07C9275170EC005A35AD /* RepositoryTypeTest.swift */; };
 		A84C07CC27517395005A35AD /* CodableHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07CB27517395005A35AD /* CodableHandlerTest.swift */; };
+		A84C07CE2751745F005A35AD /* ReadLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07CD2751745F005A35AD /* ReadLocalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		A84C07C527513B71005A35AD /* ServerRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
 		A84C07C9275170EC005A35AD /* RepositoryTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTypeTest.swift; sourceTree = "<group>"; };
 		A84C07CB27517395005A35AD /* CodableHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableHandlerTest.swift; sourceTree = "<group>"; };
+		A84C07CD2751745F005A35AD /* ReadLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadLocalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				A84C07A02750F1ED005A35AD /* Extension */,
 				A84C07B0275107A5005A35AD /* CodableHandler.swift */,
 				A84C07B42751102B005A35AD /* HelperClass.swift */,
+				A84C07CD2751745F005A35AD /* ReadLocalData.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				A84C07BC275112F1005A35AD /* DetailsViewController.swift in Sources */,
 				A84C07912750EF4E005A35AD /* RepoListPresenter.swift in Sources */,
 				A84C074C2750D917005A35AD /* AppDelegate.swift in Sources */,
+				A84C07CE2751745F005A35AD /* ReadLocalData.swift in Sources */,
 				A84C07C227511FD0005A35AD /* RepositoryType.swift in Sources */,
 				A84C07A42750F34C005A35AD /* UITableViewCell+Extension.swift in Sources */,
 				A84C07C627513B71005A35AD /* ServerRequest.m in Sources */,

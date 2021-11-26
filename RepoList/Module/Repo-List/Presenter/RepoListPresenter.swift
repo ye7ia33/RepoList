@@ -87,15 +87,10 @@ extension RepoListPresenter: RequestDelegate {
     }
     /** *GET  Local Data* */
     private func getLocalData(jsonFileName name: String) {
-        do {
-            if let bundlePath = Bundle.main.path(forResource: name, ofType: "json"),
-               let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8),
-            let _repoList = CodableHandler.shared.decode(RepoArrayList.self, classJsonData: jsonData) as? RepoArrayList {
-                self.repoList = _repoList
-                self.delegate?.reloadData()
-            }
-        } catch {
-            dLog(error)
+        if let jsonData = ReadLocalData.shared.get(fileName: name),
+           let _repoList = CodableHandler.shared.decode(RepoArrayList.self, classJsonData: jsonData) as? RepoArrayList {
+            self.repoList = _repoList
+            self.delegate?.reloadData()
         }
     }
 
