@@ -38,7 +38,7 @@ extension RepoListViewController: UITableViewDataSource {
         }
         return UITableViewCell()
     }
-    
+    // MARK: init Cell 
     private func repoViewCell(indexPath: IndexPath) -> RepoInfoCell? {
         guard let cell: RepoInfoCell = self.tableView.dequeueCell(indexPath: indexPath) else { return nil }
         if let repoModel = self.viewDelegate?.repoList?[safe: indexPath.row],
@@ -58,6 +58,7 @@ extension RepoListViewController: UITableViewDelegate {
 }
 
 extension RepoListViewController: RepoListPresenterProtocol {
+    /** *Open Screen Details Screen* */
     func didOpenDetailsScreen(repoModel: Repository) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {

@@ -244,8 +244,8 @@
 		A84C079F2750F1E3005A35AD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				A84C07B0275107A5005A35AD /* CodableHandler.swift */,
 				A84C07A02750F1ED005A35AD /* Extension */,
+				A84C07B0275107A5005A35AD /* CodableHandler.swift */,
 				A84C07B42751102B005A35AD /* HelperClass.swift */,
 			);
 			path = Utility;

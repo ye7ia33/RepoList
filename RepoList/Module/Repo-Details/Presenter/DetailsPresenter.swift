@@ -14,7 +14,6 @@ class DetailsPresenter: NSObject {
     init(delegate: DetailsPresenterProtocol, repoModel: Repository) {
         self.delegate = delegate
         self.repoModel = repoModel
-       
     }
     
     func viewDidLoad() {

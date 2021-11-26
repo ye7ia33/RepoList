@@ -245,6 +245,7 @@
                     </view>
                     <connections>
                         <outlet property="avatarImage" destination="NAp-wi-UTa" id="afn-91-q5E"/>
+                        <outlet property="openRepoButton" destination="TGt-gH-5HE" id="72d-Hq-uS3"/>
                         <outlet property="ownerNameLabel" destination="d5d-cl-Is1" id="E1j-wf-D1A"/>
                         <outlet property="repoDescription" destination="hbs-xo-qdO" id="FqC-hR-9rf"/>
                         <outlet property="repoNameLabel" destination="5ny-9V-z3O" id="npM-sC-16b"/>

@@ -35,7 +35,17 @@ class RepoInfoCell: UITableViewCell {
         super.prepareForReuse()
         self.ownerAvatarImage.image = nil
     }
-    
+    /**
+     configration cell with data like image url, Repository name and owner name
+     
+     **data**
+     
+     1- imgUrl: String
+     
+     2-  repoName: String
+     
+     3- ownerName: String
+     */
     func config(imgUrl: String, repoName: String, ownerName: String) {
         self.ownerAvatarImage.setDefaultImage()
         self.ownerAvatarImage?.downloadImage(from: imgUrl)
