@@ -14,8 +14,8 @@ enum RepositoryType: CaseIterable {
     case unknown
     var labelColor: UIColor {
         switch self {
-        case .user: return .green
-        case .organization: return .cyan
+        case .user: return UIColor(red: 250/255, green: 176/255, blue: 0/255, alpha: 1)
+        case .organization: return UIColor(red: 222/255, green: 52/255, blue: 11/255, alpha: 1)
         case .unknown: return .black
         }
     }
@@ -23,12 +23,12 @@ enum RepositoryType: CaseIterable {
     var title: String {
         switch self {
         case .user: return "User"
-        case .organization: return "Osrganization"
+        case .organization: return "Organization"
         case .unknown: return ""
         }
     }
     
-    static func getCase(string:String) -> RepositoryType {
+    static func getCase(string:String?) -> RepositoryType {
         return self.allCases.first{"\($0.title)" == string} ?? .unknown
     }
 
