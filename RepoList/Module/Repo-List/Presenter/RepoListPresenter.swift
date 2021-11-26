@@ -17,13 +17,6 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
     init(delegate: RepoListPresenterProtocol) {
         self.delegate = delegate
     }
-    //MARK: call viewDidLoad method after view controller is fire ViewDidLoad Override method.
-    func viewDidLoad() {
-        /// Load remote Data.
-//        self.getRemoteData()
-        /// Reolad Data From json file
-        self.getLocalData(jsonFileName: "MocData")
-    }
     
     //MARK: call tableViewDidSelectItem method after user touch on cell to open details screen.
     func tableViewDidSelectItem(indexPath: IndexPath) {
@@ -31,9 +24,9 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
         self.delegate?.didOpenDetailsScreen(repoModel: repo)
     }
     /**
-        send search key string to filter data
+     send search key string to filter data
      */
-    func didStartSearchWith(str: String) {
+    internal func didStartSearchWith(str: String) {
         if str.count < 2 {
             self.didEndSearch()
             return
@@ -49,14 +42,14 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
     /**
      didEndSearch Method calling if user end search or search key string length smaller than 2
      
-        re-init repoList data
-
-        set isFiltering = false
+     re-init repoList data
      
-        release MainList Data
+     set isFiltering = false
+     
+     release MainList Data
      
      */
-    func didEndSearch() {
+    internal func didEndSearch() {
         if self.mainList != nil {
             self.repoList = self.mainList
         }
@@ -68,13 +61,18 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
 
 extension RepoListPresenter: RequestDelegate {
     /** *GET Remote Data* */
-    private func getRemoteData() {
+    internal func getRemoteData() {
         let request = ServerRequest()
         request.requestDelegate = self
         request.execute("https://api.github.com/repositories", httpMethod: "GET")
     }
-   
-    func didFinshRequest(_ data: Data!) {
+    
+    //MARK: we are using local data because github api has limitaion to calling API Multi times.
+    internal func getLocalData() {
+        self.getLocalData(jsonFileName: "MocData")
+    }
+    
+    internal func didFinshRequest(_ data: Data!) {
         guard let _repoList = CodableHandler.shared.decode(RepoArrayList.self, classJsonData: data) as? RepoArrayList else {
             return
         }
@@ -82,9 +80,10 @@ extension RepoListPresenter: RequestDelegate {
         self.delegate?.reloadData()
     }
     
-    func didFinshRequestWithError(_ errorCode: Error!) {
-        dLog(errorCode)
+    internal func didFinshRequestWithError(_ error: Error!) {
+        self.delegate?.didGetErrorFromServerWithErrorMsg(error.localizedDescription)
     }
+    
     /** *GET  Local Data* */
     private func getLocalData(jsonFileName name: String) {
         if let jsonData = ReadLocalData.shared.get(fileName: name),
@@ -93,5 +92,5 @@ extension RepoListPresenter: RequestDelegate {
             self.delegate?.reloadData()
         }
     }
-
+    
 }

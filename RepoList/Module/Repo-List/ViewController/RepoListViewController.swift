@@ -15,9 +15,27 @@ class RepoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
-        self.viewDelegate?.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.askUserFromGetData()
+    }
+    
+    private func askUserFromGetData() {
+        let alert = UIAlertController(title: "!", message:"Do you want get Local Data?", preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.viewDelegate?.getLocalData()
+        }))
+
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in
+            self.viewDelegate?.getRemoteData()
+        }))
+        
+        self.present(alert, animated: true, completion: nil )
+
+    }
     func config(delegate: RepoListViewProtocol) {
         self.viewDelegate = delegate
     }
@@ -58,6 +76,10 @@ extension RepoListViewController: UITableViewDelegate {
 }
 
 extension RepoListViewController: RepoListPresenterProtocol {
+    func didGetErrorFromServerWithErrorMsg(_ msg: String) {
+        self.showToast(message: msg)
+    }
+    
     /** *Open Screen Details Screen* */
     func didOpenDetailsScreen(repoModel: Repository) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -88,7 +110,6 @@ extension RepoListViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text ?? "")
         self.view.endEditing(true)
         self.viewDelegate?.didEndSearch()
     }

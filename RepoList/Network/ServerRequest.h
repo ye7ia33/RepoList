@@ -10,7 +10,7 @@
 @protocol RequestDelegate <NSObject>
 -(void) didFinshRequest:(NSData*) data;
 @optional
--(void) didFinshRequestWithError :(NSError *) errorCode ;
+-(void) didFinshRequestWithError :(NSError *) error ;
 @end
 
 @interface ServerRequest: NSObject

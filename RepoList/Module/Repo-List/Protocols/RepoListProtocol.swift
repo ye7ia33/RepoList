@@ -13,13 +13,15 @@ import UIKit
 protocol RepoListPresenterProtocol: AnyObject {
     func reloadData()
     func didOpenDetailsScreen(repoModel: Repository)
+    func didGetErrorFromServerWithErrorMsg(_ msg: String)
 }
 
 /**
     use  **RepoListViewProtocol**  to impleement View methods actions and variable .
 */
 protocol RepoListViewProtocol: NSObject {
-    func viewDidLoad()
+    func getLocalData()
+    func getRemoteData()
     var repoList: RepoArrayList? { get }
     func tableViewDidSelectItem(indexPath: IndexPath)
     func didStartSearchWith(str: String)
