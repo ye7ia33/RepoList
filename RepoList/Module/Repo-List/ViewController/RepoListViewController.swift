@@ -47,7 +47,7 @@ class RepoListViewController: UIViewController {
 
 extension RepoListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewDelegate?.repoList?.count ?? 0
+        return viewDelegate?.displayedList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +59,7 @@ extension RepoListViewController: UITableViewDataSource {
     // MARK: init Cell 
     private func repoViewCell(indexPath: IndexPath) -> RepoInfoCell? {
         guard let cell: RepoInfoCell = self.tableView.dequeueCell(indexPath: indexPath) else { return nil }
-        if let repoModel = self.viewDelegate?.repoList?[safe: indexPath.row],
+        if let repoModel = self.viewDelegate?.displayedList?[safe: indexPath.row],
            let repoName = repoModel.name,
            let ownerName = repoModel.fullName,
            let avatarUrl = repoModel.owner?.avatarURL {
@@ -123,5 +123,16 @@ extension RepoListViewController: UISearchBarDelegate {
         }
         return true
     }
+    
+}
+
+extension RepoListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        let rowNumber = viewDelegate?.displayedList?.count ?? 0
+        if (rowNumber - 5) == indexPaths.last?.row ?? 0 {
+            self.viewDelegate?.loadMore()
+        }
+    }
+    
     
 }

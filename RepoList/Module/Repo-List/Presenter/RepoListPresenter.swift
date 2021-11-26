@@ -9,18 +9,20 @@ import UIKit
 
 final class RepoListPresenter: NSObject, RepoListViewProtocol {
     private  weak var delegate: RepoListPresenterProtocol?
-    internal var repoList: RepoArrayList?
+    internal var displayedList: RepoArrayList?
     private var mainList: RepoArrayList?
+    private var filteredArray: RepoArrayList?
     private var isFiltering: Bool = false
     
     /** important init RepoListPresenter with RepoListPresenterProtocol  */
     init(delegate: RepoListPresenterProtocol) {
         self.delegate = delegate
+        self.displayedList = RepoArrayList()
     }
     
     //MARK: call tableViewDidSelectItem method after user touch on cell to open details screen.
     func tableViewDidSelectItem(indexPath: IndexPath) {
-        guard let repo = self.repoList?[safe: indexPath.row] else { return }
+        guard let repo = self.displayedList?[safe: indexPath.row] else { return }
         self.delegate?.didOpenDetailsScreen(repoModel: repo)
     }
     /**
@@ -32,8 +34,8 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
             return
         }
         self.isFiltering = true
-        if self.mainList == nil { self.mainList = repoList }
-        self.repoList = mainList?.filter({
+        if self.filteredArray == nil { self.filteredArray = displayedList }
+        self.displayedList = filteredArray?.filter({
             return $0.fullName?.lowercased().contains(str.lowercased()) ?? false
         })
         isFiltering ? self.delegate?.reloadData() : self.didEndSearch()
@@ -46,15 +48,31 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
      
      set isFiltering = false
      
-     release MainList Data
-     
+     Release filteredArray
      */
     internal func didEndSearch() {
-        if self.mainList != nil {
-            self.repoList = self.mainList
+        if self.filteredArray != nil {
+            self.displayedList = self.filteredArray
         }
         self.isFiltering = false
-        self.mainList = nil
+        self.filteredArray = nil
+        self.delegate?.reloadData()
+    }
+    
+    func loadMore() {
+        self.appendData()
+    }
+    
+    private func appendData() {
+        if self.mainList?.count == 0 { return }
+        let listSize = self.mainList?.count ?? 0
+        for idx in 0...listSize {
+            if idx == 10 && (self.displayedList?.count ?? 0) > 20 { break }
+            if let repoModel = self.mainList?[safe: idx] {
+                self.displayedList?.append(repoModel)
+                self.mainList?.remove(at: idx)
+            }
+        }
         self.delegate?.reloadData()
     }
 }
@@ -76,8 +94,8 @@ extension RepoListPresenter: RequestDelegate {
         guard let _repoList = CodableHandler.shared.decode(RepoArrayList.self, classJsonData: data) as? RepoArrayList else {
             return
         }
-        self.repoList = _repoList
-        self.delegate?.reloadData()
+        self.mainList = _repoList
+        self.appendData()
     }
     
     internal func didFinshRequestWithError(_ error: Error!) {
@@ -88,8 +106,8 @@ extension RepoListPresenter: RequestDelegate {
     private func getLocalData(jsonFileName name: String) {
         if let jsonData = ReadLocalData.shared.get(fileName: name),
            let _repoList = CodableHandler.shared.decode(RepoArrayList.self, classJsonData: jsonData) as? RepoArrayList {
-            self.repoList = _repoList
-            self.delegate?.reloadData()
+            self.mainList = _repoList
+            self.appendData()
         }
     }
     

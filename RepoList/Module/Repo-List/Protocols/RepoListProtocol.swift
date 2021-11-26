@@ -22,8 +22,9 @@ protocol RepoListPresenterProtocol: AnyObject {
 protocol RepoListViewProtocol: NSObject {
     func getLocalData()
     func getRemoteData()
-    var repoList: RepoArrayList? { get }
+    var displayedList: RepoArrayList? { get }
     func tableViewDidSelectItem(indexPath: IndexPath)
     func didStartSearchWith(str: String)
     func didEndSearch()
+    func loadMore()
 }
