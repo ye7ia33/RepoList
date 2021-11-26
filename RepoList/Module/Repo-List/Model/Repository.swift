@@ -10,10 +10,10 @@ import Foundation
 struct Repository: Codable {
     let id: Int?
     let nodeID, name, fullName: String?
-    let welcomePrivate: Bool?
+    let isPrivate: Bool?
     let owner: Owner?
     let htmlURL: String?
-    let welcomeDescription: String?
+    let repoDescription: String?
     let fork: Bool?
     let url, forksURL: String?
     let keysURL, collaboratorsURL: String?
@@ -40,10 +40,10 @@ struct Repository: Codable {
         case nodeID = "node_id"
         case name
         case fullName = "full_name"
-        case welcomePrivate = "private"
+        case isPrivate = "private"
         case owner
         case htmlURL = "html_url"
-        case welcomeDescription = "description"
+        case repoDescription = "description"
         case fork, url
         case forksURL = "forks_url"
         case keysURL = "keys_url"

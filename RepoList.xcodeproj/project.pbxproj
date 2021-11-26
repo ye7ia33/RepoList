@@ -17,8 +17,7 @@
 		A84C076F2750D919005A35AD /* RepoListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C076E2750D919005A35AD /* RepoListUITestsLaunchTests.swift */; };
 		A84C078E2750EEFA005A35AD /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C078D2750EEFA005A35AD /* RepoListViewController.swift */; };
 		A84C07912750EF4E005A35AD /* RepoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07902750EF4E005A35AD /* RepoListPresenter.swift */; };
-		A84C07952750EF79005A35AD /* RepoListPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07942750EF79005A35AD /* RepoListPresenterProtocol.swift */; };
-		A84C07972750EFAE005A35AD /* RepoListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07962750EFAE005A35AD /* RepoListViewProtocol.swift */; };
+		A84C07952750EF79005A35AD /* RepoListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07942750EF79005A35AD /* RepoListProtocol.swift */; };
 		A84C079C2750F029005A35AD /* RepoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C079A2750F029005A35AD /* RepoInfoCell.swift */; };
 		A84C079D2750F029005A35AD /* RepoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84C079B2750F029005A35AD /* RepoInfoCell.xib */; };
 		A84C07A22750F201005A35AD /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07A12750F201005A35AD /* UITableView+Extension.swift */; };
@@ -31,6 +30,10 @@
 		A84C07B1275107A5005A35AD /* CodableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07B0275107A5005A35AD /* CodableHandler.swift */; };
 		A84C07B327510E7A005A35AD /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07B227510E7A005A35AD /* Collection+Extension.swift */; };
 		A84C07B52751102B005A35AD /* HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07B42751102B005A35AD /* HelperClass.swift */; };
+		A84C07BC275112F1005A35AD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07BB275112F1005A35AD /* DetailsViewController.swift */; };
+		A84C07BE27511D01005A35AD /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07BD27511D01005A35AD /* DetailsPresenter.swift */; };
+		A84C07C027511DA5005A35AD /* DetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07BF27511DA5005A35AD /* DetailsProtocol.swift */; };
+		A84C07C227511FD0005A35AD /* RepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07C127511FD0005A35AD /* RepositoryType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +68,7 @@
 		A84C076E2750D919005A35AD /* RepoListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A84C078D2750EEFA005A35AD /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
 		A84C07902750EF4E005A35AD /* RepoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListPresenter.swift; sourceTree = "<group>"; };
-		A84C07942750EF79005A35AD /* RepoListPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListPresenterProtocol.swift; sourceTree = "<group>"; };
-		A84C07962750EFAE005A35AD /* RepoListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewProtocol.swift; sourceTree = "<group>"; };
+		A84C07942750EF79005A35AD /* RepoListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListProtocol.swift; sourceTree = "<group>"; };
 		A84C079A2750F029005A35AD /* RepoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfoCell.swift; sourceTree = "<group>"; };
 		A84C079B2750F029005A35AD /* RepoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoInfoCell.xib; sourceTree = "<group>"; };
 		A84C07A12750F201005A35AD /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -79,6 +81,10 @@
 		A84C07B0275107A5005A35AD /* CodableHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHandler.swift; sourceTree = "<group>"; };
 		A84C07B227510E7A005A35AD /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		A84C07B42751102B005A35AD /* HelperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperClass.swift; sourceTree = "<group>"; };
+		A84C07BB275112F1005A35AD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A84C07BD27511D01005A35AD /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		A84C07BF27511DA5005A35AD /* DetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProtocol.swift; sourceTree = "<group>"; };
+		A84C07C127511FD0005A35AD /* RepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A84C078B2750EED1005A35AD /* Repo-List */,
+				A84C07B627511290005A35AD /* Repo-Details */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -207,8 +214,7 @@
 		A84C07922750EF55005A35AD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A84C07942750EF79005A35AD /* RepoListPresenterProtocol.swift */,
-				A84C07962750EFAE005A35AD /* RepoListViewProtocol.swift */,
+				A84C07942750EF79005A35AD /* RepoListProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				A84C07A92751001D005A35AD /* Repository.swift */,
+				A84C07C127511FD0005A35AD /* RepositoryType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +265,40 @@
 				A84C07AD2751067F005A35AD /* RepositoryData.swift */,
 			);
 			path = "Data Repositories";
+			sourceTree = "<group>";
+		};
+		A84C07B627511290005A35AD /* Repo-Details */ = {
+			isa = PBXGroup;
+			children = (
+				A84C07BA275112BC005A35AD /* Protocols */,
+				A84C07B9275112B5005A35AD /* Presenter */,
+				A84C07B8275112AA005A35AD /* ViewController */,
+			);
+			path = "Repo-Details";
+			sourceTree = "<group>";
+		};
+		A84C07B8275112AA005A35AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A84C07BB275112F1005A35AD /* DetailsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A84C07B9275112B5005A35AD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A84C07BD27511D01005A35AD /* DetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A84C07BA275112BC005A35AD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A84C07BF27511DA5005A35AD /* DetailsProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,16 +441,19 @@
 				A84C07AA2751001D005A35AD /* Repository.swift in Sources */,
 				A84C079C2750F029005A35AD /* RepoInfoCell.swift in Sources */,
 				A84C07B327510E7A005A35AD /* Collection+Extension.swift in Sources */,
-				A84C07972750EFAE005A35AD /* RepoListViewProtocol.swift in Sources */,
+				A84C07C027511DA5005A35AD /* DetailsProtocol.swift in Sources */,
 				A84C07B1275107A5005A35AD /* CodableHandler.swift in Sources */,
 				A84C07A82750FCF3005A35AD /* UIView+Extension.swift.swift in Sources */,
+				A84C07BC275112F1005A35AD /* DetailsViewController.swift in Sources */,
 				A84C07912750EF4E005A35AD /* RepoListPresenter.swift in Sources */,
 				A84C074C2750D917005A35AD /* AppDelegate.swift in Sources */,
+				A84C07C227511FD0005A35AD /* RepositoryType.swift in Sources */,
 				A84C07A42750F34C005A35AD /* UITableViewCell+Extension.swift in Sources */,
 				A84C078E2750EEFA005A35AD /* RepoListViewController.swift in Sources */,
 				A84C074E2750D917005A35AD /* SceneDelegate.swift in Sources */,
-				A84C07952750EF79005A35AD /* RepoListPresenterProtocol.swift in Sources */,
+				A84C07952750EF79005A35AD /* RepoListProtocol.swift in Sources */,
 				A84C07A22750F201005A35AD /* UITableView+Extension.swift in Sources */,
+				A84C07BE27511D01005A35AD /* DetailsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
