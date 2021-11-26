@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		A84C074C2750D917005A35AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C074B2750D917005A35AD /* AppDelegate.swift */; };
 		A84C074E2750D917005A35AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C074D2750D917005A35AD /* SceneDelegate.swift */; };
-		A84C07502750D917005A35AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C074F2750D917005A35AD /* ViewController.swift */; };
 		A84C07532750D917005A35AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A84C07512750D917005A35AD /* Main.storyboard */; };
 		A84C07552750D919005A35AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A84C07542750D919005A35AD /* Assets.xcassets */; };
 		A84C07582750D919005A35AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A84C07562750D919005A35AD /* LaunchScreen.storyboard */; };
 		A84C07632750D919005A35AD /* RepoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07622750D919005A35AD /* RepoListTests.swift */; };
 		A84C076D2750D919005A35AD /* RepoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C076C2750D919005A35AD /* RepoListUITests.swift */; };
 		A84C076F2750D919005A35AD /* RepoListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C076E2750D919005A35AD /* RepoListUITestsLaunchTests.swift */; };
+		A84C078E2750EEFA005A35AD /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C078D2750EEFA005A35AD /* RepoListViewController.swift */; };
+		A84C07912750EF4E005A35AD /* RepoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07902750EF4E005A35AD /* RepoListPresenter.swift */; };
+		A84C07952750EF79005A35AD /* RepoListPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07942750EF79005A35AD /* RepoListPresenterProtocol.swift */; };
+		A84C07972750EFAE005A35AD /* RepoListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07962750EFAE005A35AD /* RepoListViewProtocol.swift */; };
+		A84C079C2750F029005A35AD /* RepoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C079A2750F029005A35AD /* RepoInfoCell.swift */; };
+		A84C079D2750F029005A35AD /* RepoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84C079B2750F029005A35AD /* RepoInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,6 @@
 		A84C07482750D917005A35AD /* RepoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84C074B2750D917005A35AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A84C074D2750D917005A35AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A84C074F2750D917005A35AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A84C07522750D917005A35AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A84C07542750D919005A35AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A84C07572750D919005A35AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,12 @@
 		A84C07682750D919005A35AD /* RepoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84C076C2750D919005A35AD /* RepoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListUITests.swift; sourceTree = "<group>"; };
 		A84C076E2750D919005A35AD /* RepoListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A84C078D2750EEFA005A35AD /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
+		A84C07902750EF4E005A35AD /* RepoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListPresenter.swift; sourceTree = "<group>"; };
+		A84C07942750EF79005A35AD /* RepoListPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListPresenterProtocol.swift; sourceTree = "<group>"; };
+		A84C07962750EFAE005A35AD /* RepoListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewProtocol.swift; sourceTree = "<group>"; };
+		A84C079A2750F029005A35AD /* RepoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfoCell.swift; sourceTree = "<group>"; };
+		A84C079B2750F029005A35AD /* RepoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoInfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +109,10 @@
 		A84C074A2750D917005A35AD /* RepoList */ = {
 			isa = PBXGroup;
 			children = (
+				A84C077B2750D9DF005A35AD /* Network */,
+				A84C078A2750EE91005A35AD /* Module */,
 				A84C074B2750D917005A35AD /* AppDelegate.swift */,
 				A84C074D2750D917005A35AD /* SceneDelegate.swift */,
-				A84C074F2750D917005A35AD /* ViewController.swift */,
 				A84C07512750D917005A35AD /* Main.storyboard */,
 				A84C07542750D919005A35AD /* Assets.xcassets */,
 				A84C07562750D919005A35AD /* LaunchScreen.storyboard */,
@@ -125,6 +136,66 @@
 				A84C076E2750D919005A35AD /* RepoListUITestsLaunchTests.swift */,
 			);
 			path = RepoListUITests;
+			sourceTree = "<group>";
+		};
+		A84C077B2750D9DF005A35AD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A84C078A2750EE91005A35AD /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A84C078B2750EED1005A35AD /* Repo-List */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A84C078B2750EED1005A35AD /* Repo-List */ = {
+			isa = PBXGroup;
+			children = (
+				A84C07922750EF55005A35AD /* Protocols */,
+				A84C078F2750EF34005A35AD /* Presenter */,
+				A84C078C2750EEDE005A35AD /* ViewController */,
+				A84C07992750F013005A35AD /* Views */,
+			);
+			path = "Repo-List";
+			sourceTree = "<group>";
+		};
+		A84C078C2750EEDE005A35AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A84C078D2750EEFA005A35AD /* RepoListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A84C078F2750EF34005A35AD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A84C07902750EF4E005A35AD /* RepoListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A84C07922750EF55005A35AD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A84C07942750EF79005A35AD /* RepoListPresenterProtocol.swift */,
+				A84C07962750EFAE005A35AD /* RepoListViewProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A84C07992750F013005A35AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A84C079A2750F029005A35AD /* RepoInfoCell.swift */,
+				A84C079B2750F029005A35AD /* RepoInfoCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +266,7 @@
 				TargetAttributes = {
 					A84C07472750D917005A35AD = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 					A84C075D2750D919005A35AD = {
 						CreatedOnToolsVersion = 13.0;
@@ -234,6 +306,7 @@
 				A84C07582750D919005A35AD /* LaunchScreen.storyboard in Resources */,
 				A84C07552750D919005A35AD /* Assets.xcassets in Resources */,
 				A84C07532750D917005A35AD /* Main.storyboard in Resources */,
+				A84C079D2750F029005A35AD /* RepoInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +331,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A84C07502750D917005A35AD /* ViewController.swift in Sources */,
+				A84C079C2750F029005A35AD /* RepoInfoCell.swift in Sources */,
+				A84C07972750EFAE005A35AD /* RepoListViewProtocol.swift in Sources */,
+				A84C07912750EF4E005A35AD /* RepoListPresenter.swift in Sources */,
 				A84C074C2750D917005A35AD /* AppDelegate.swift in Sources */,
+				A84C078E2750EEFA005A35AD /* RepoListViewController.swift in Sources */,
 				A84C074E2750D917005A35AD /* SceneDelegate.swift in Sources */,
+				A84C07952750EF79005A35AD /* RepoListPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9GDF3DQEXP;
@@ -455,6 +533,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robustastudio.RepoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -465,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9GDF3DQEXP;
