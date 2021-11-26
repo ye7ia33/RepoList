@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepoListPresenter: NSObject, RepoListViewProtocol {
+final class RepoListPresenter: NSObject, RepoListViewProtocol {
     private  weak var delegate: RepoListPresenterProtocol?
     internal var repoList: RepoArrayList?
     private var mainList: RepoArrayList?
@@ -18,14 +18,10 @@ class RepoListPresenter: NSObject, RepoListViewProtocol {
     }
     
     func viewDidLoad() {
-        self.getData()
+        self.getRemoteData()
+//        self.getLocalData(jsonFileName: "MocData")
     }
-    
-    private func getData() {
-        self.repoList = RepositoryData().getLocalData(jsonFileName: "MocData")
-        self.delegate?.reloadData()
-    }
-    
+
     func tableViewDidSelectItem(indexPath: IndexPath) {
         guard let repo = self.repoList?[safe: indexPath.row] else { return }
         self.delegate?.didOpenDetailsScreen(repoModel: repo)
@@ -51,5 +47,38 @@ class RepoListPresenter: NSObject, RepoListViewProtocol {
         self.isFiltering = false
         self.mainList = nil
         self.delegate?.reloadData()
+    }
+}
+
+extension RepoListPresenter: RequestDelegate {
+    private func getRemoteData() {
+        let request = ServerRequest()
+        request.requestDelegate = self
+        request.execute("https://api.github.com/repositories", httpMethod: "GET")
+    }
+    
+    private func getLocalData(jsonFileName name: String) {
+        do {
+            if let bundlePath = Bundle.main.path(forResource: name, ofType: "json"),
+               let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8),
+            let _repoList = CodableHandler.shared.decode(RepoArrayList.self, classJsonData: jsonData) as? RepoArrayList {
+                self.repoList = _repoList
+                self.delegate?.reloadData()
+            }
+        } catch {
+            dLog(error)
+        }
+    }
+    
+    func didFinshRequest(_ data: Data!) {
+        guard let _repoList = CodableHandler.shared.decode(RepoArrayList.self, classJsonData: data) as? RepoArrayList else {
+            return
+        }
+        self.repoList = _repoList
+        self.delegate?.reloadData()
+    }
+    
+    func didFinshRequestWithError(_ errorCode: Error!) {
+        dLog(errorCode)
     }
 }

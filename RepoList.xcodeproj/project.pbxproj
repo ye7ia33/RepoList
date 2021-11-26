@@ -26,7 +26,6 @@
 		A84C07A82750FCF3005A35AD /* UIView+Extension.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07A72750FCF3005A35AD /* UIView+Extension.swift.swift */; };
 		A84C07AA2751001D005A35AD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07A92751001D005A35AD /* Repository.swift */; };
 		A84C07AC275105A3005A35AD /* MocData.json in Resources */ = {isa = PBXBuildFile; fileRef = A84C07AB275105A3005A35AD /* MocData.json */; };
-		A84C07AE2751067F005A35AD /* RepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07AD2751067F005A35AD /* RepositoryData.swift */; };
 		A84C07B1275107A5005A35AD /* CodableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07B0275107A5005A35AD /* CodableHandler.swift */; };
 		A84C07B327510E7A005A35AD /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07B227510E7A005A35AD /* Collection+Extension.swift */; };
 		A84C07B52751102B005A35AD /* HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07B42751102B005A35AD /* HelperClass.swift */; };
@@ -34,6 +33,7 @@
 		A84C07BE27511D01005A35AD /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07BD27511D01005A35AD /* DetailsPresenter.swift */; };
 		A84C07C027511DA5005A35AD /* DetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07BF27511DA5005A35AD /* DetailsProtocol.swift */; };
 		A84C07C227511FD0005A35AD /* RepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C07C127511FD0005A35AD /* RepositoryType.swift */; };
+		A84C07C627513B71005A35AD /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C07C527513B71005A35AD /* ServerRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,6 @@
 		A84C07A72750FCF3005A35AD /* UIView+Extension.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift.swift"; sourceTree = "<group>"; };
 		A84C07A92751001D005A35AD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		A84C07AB275105A3005A35AD /* MocData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MocData.json; sourceTree = "<group>"; };
-		A84C07AD2751067F005A35AD /* RepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryData.swift; sourceTree = "<group>"; };
 		A84C07B0275107A5005A35AD /* CodableHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHandler.swift; sourceTree = "<group>"; };
 		A84C07B227510E7A005A35AD /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		A84C07B42751102B005A35AD /* HelperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperClass.swift; sourceTree = "<group>"; };
@@ -85,6 +84,9 @@
 		A84C07BD27511D01005A35AD /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		A84C07BF27511DA5005A35AD /* DetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProtocol.swift; sourceTree = "<group>"; };
 		A84C07C127511FD0005A35AD /* RepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryType.swift; sourceTree = "<group>"; };
+		A84C07C327513B71005A35AD /* RepoList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RepoList-Bridging-Header.h"; sourceTree = "<group>"; };
+		A84C07C427513B71005A35AD /* ServerRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
+		A84C07C527513B71005A35AD /* ServerRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				A84C07AB275105A3005A35AD /* MocData.json */,
-				A84C07AF275106E2005A35AD /* Data Repositories */,
+				A84C07C427513B71005A35AD /* ServerRequest.h */,
+				A84C07C527513B71005A35AD /* ServerRequest.m */,
+				A84C07C327513B71005A35AD /* RepoList-Bridging-Header.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -257,14 +261,6 @@
 				A84C07B227510E7A005A35AD /* Collection+Extension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		A84C07AF275106E2005A35AD /* Data Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				A84C07AD2751067F005A35AD /* RepositoryData.swift */,
-			);
-			path = "Data Repositories";
 			sourceTree = "<group>";
 		};
 		A84C07B627511290005A35AD /* Repo-Details */ = {
@@ -435,7 +431,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A84C07AE2751067F005A35AD /* RepositoryData.swift in Sources */,
 				A84C07A62750F97F005A35AD /* UIImageView+Extension.swift in Sources */,
 				A84C07B52751102B005A35AD /* HelperClass.swift in Sources */,
 				A84C07AA2751001D005A35AD /* Repository.swift in Sources */,
@@ -449,6 +444,7 @@
 				A84C074C2750D917005A35AD /* AppDelegate.swift in Sources */,
 				A84C07C227511FD0005A35AD /* RepositoryType.swift in Sources */,
 				A84C07A42750F34C005A35AD /* UITableViewCell+Extension.swift in Sources */,
+				A84C07C627513B71005A35AD /* ServerRequest.m in Sources */,
 				A84C078E2750EEFA005A35AD /* RepoListViewController.swift in Sources */,
 				A84C074E2750D917005A35AD /* SceneDelegate.swift in Sources */,
 				A84C07952750EF79005A35AD /* RepoListProtocol.swift in Sources */,
@@ -649,6 +645,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robustastudio.RepoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RepoList/Network/RepoList-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -679,6 +676,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robustastudio.RepoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RepoList/Network/RepoList-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

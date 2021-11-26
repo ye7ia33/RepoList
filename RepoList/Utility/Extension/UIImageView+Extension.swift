@@ -21,7 +21,6 @@ extension UIImageView {
                 self?.setDefaultImage()
                 return
             }
-            
             guard let httpURLResponse = response as? HTTPURLResponse,
                   httpURLResponse.statusCode == 200,
                   let data = data else {

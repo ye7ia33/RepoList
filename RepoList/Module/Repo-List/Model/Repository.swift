@@ -6,6 +6,7 @@
 //
 
 import Foundation
+typealias RepoArrayList = [Repository]
 
 struct Repository: Codable {
     let id: Int?

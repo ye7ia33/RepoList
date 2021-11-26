@@ -28,7 +28,7 @@ enum RepositoryType: CaseIterable {
         }
     }
     
-    static func getCase(string:String?) -> RepositoryType {
+    static func getCase(string:String) -> RepositoryType {
         return self.allCases.first{"\($0.title)" == string} ?? .unknown
     }
 

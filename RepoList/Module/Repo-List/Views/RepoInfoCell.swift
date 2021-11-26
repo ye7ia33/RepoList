@@ -8,7 +8,7 @@
 import UIKit
 
 class RepoInfoCell: UITableViewCell {
-
+    
     @IBOutlet private weak var ownerAvatarImage: UIImageView! {
         didSet {
             self.ownerAvatarImage.setCircle()
@@ -28,12 +28,18 @@ class RepoInfoCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.ownerAvatarImage.image = nil
+    }
+    
     func config(imgUrl: String, repoName: String, ownerName: String) {
+        self.ownerAvatarImage.setDefaultImage()
         self.ownerAvatarImage?.downloadImage(from: imgUrl)
         self.repoNameLabel.text = repoName
         self.ownerNameLabel.text = ownerName
     }
-    
 }

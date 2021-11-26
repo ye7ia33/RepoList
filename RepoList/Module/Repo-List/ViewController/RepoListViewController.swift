@@ -25,21 +25,13 @@ class RepoListViewController: UIViewController {
     private func setupTableView() {
         self.tableView.registerCellType(RepoInfoCell.self)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+
 extension RepoListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewDelegate?.repoList?.count ?? 0
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.repoViewCell(indexPath: indexPath) {
             return cell
@@ -76,7 +68,9 @@ extension RepoListViewController: RepoListPresenterProtocol {
     }
     
     func reloadData() {
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 }
@@ -86,6 +80,7 @@ extension RepoListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.viewDelegate?.didStartSearchWith(str: searchText)
     }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
         self.viewDelegate?.didEndSearch()
@@ -99,7 +94,6 @@ extension RepoListViewController: UISearchBarDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.returnKeyType == .search {
-            //                self.getResultFromServer(searchKey: searchTextField.text!)
             self.view.endEditing(true)
         }
         if textField.returnKeyType == .default {
