@@ -8,5 +8,7 @@
 import UIKit
 
 protocol RepoListViewProtocol: NSObject {
-
+    func viewDidLoad()
+    var numOfRepo: Int? { get }
+    var repoList: RepoArrayList? { get }
 }

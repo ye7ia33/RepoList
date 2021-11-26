@@ -8,6 +8,6 @@
 import UIKit
 
 protocol RepoListPresenterProtocol: AnyObject {
-    
+    func reloadData()
 }
 
