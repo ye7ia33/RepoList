@@ -67,11 +67,11 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
         if self.mainList?.count == 0 { return }
         let listSize = self.mainList?.count ?? 0
         for idx in 0...listSize {
-            if idx == 10 && (self.displayedList?.count ?? 0) > 20 { break }
+            if idx >= 10 && (self.displayedList?.count ?? 0) > 20 { break }
             if let repoModel = self.mainList?[safe: idx] {
                 self.displayedList?.append(repoModel)
                 self.mainList?.remove(at: idx)
-            }
+            } else { break }
         }
         self.delegate?.reloadData()
     }
