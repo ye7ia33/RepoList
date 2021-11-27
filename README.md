@@ -24,7 +24,8 @@ https://api.github.com/repositories
 
 **Screenshoots for App**
 
-![Alt Text](/Screenshots/img1.png)
-![Alt Text](/Screenshots/img2.png)
-![Alt Text](/Screenshots/img3.png)
+<img src="/Screenshots/img1.png" width=50% height=50%>
+<img src="/Screenshots/img2.png" width=50% height=50%>
+<img src="/Screenshots/img3.png" width=50% height=50%>
+
 
