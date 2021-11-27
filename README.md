@@ -24,7 +24,7 @@ https://api.github.com/repositories
 
 **Screenshoots for App**
 
-![Alt Text](/screenshots/img1.png)
-![Alt Text](/screenshots/img2.png)
-![Alt Text](/screenshots/img3.png)
+![Alt Text](/Screenshots/img1.png)
+![Alt Text](/Screenshots/img2.png)
+![Alt Text](/Screenshots/img3.png)
 
