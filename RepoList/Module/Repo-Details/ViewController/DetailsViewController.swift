@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+final class DetailsViewController: UIViewController {
     private var viewDelegate: DetailsViewProtocol?
     @IBOutlet private weak var avatarImage: UIImageView!
     @IBOutlet private weak var ownerNameLabel: UILabel!

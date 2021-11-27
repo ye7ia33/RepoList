@@ -21,7 +21,7 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
     }
     
     //MARK: call tableViewDidSelectItem method after user touch on cell to open details screen.
-    func tableViewDidSelectItem(indexPath: IndexPath) {
+    internal func tableViewDidSelectItem(indexPath: IndexPath) {
         guard let repo = self.displayedList?[safe: indexPath.row] else { return }
         self.delegate?.didOpenDetailsScreen(repoModel: repo)
     }
@@ -59,7 +59,7 @@ final class RepoListPresenter: NSObject, RepoListViewProtocol {
         self.delegate?.reloadData()
     }
     
-    func loadMore() {
+   internal func loadMore() {
         self.appendData()
     }
     

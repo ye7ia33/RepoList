@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsPresenter: NSObject {
+final class DetailsPresenter: NSObject {
     private weak var delegate: DetailsPresenterProtocol?
     private var repoModel: Repository?
     
@@ -16,38 +16,38 @@ class DetailsPresenter: NSObject {
         self.repoModel = repoModel
     }
     
-    func viewDidLoad() {
+    internal  func viewDidLoad() {
         self.delegate?.reloadData()
     }
     
 }
 
 extension DetailsPresenter: DetailsViewProtocol {
-    var avatarUrl: String? {
+    internal var avatarUrl: String? {
         return self.repoModel?.owner?.avatarURL
     }
     
-    var ownerName: String? {
+    internal var ownerName: String? {
         return self.repoModel?.fullName
     }
     
-    var repoName: String? {
+    internal var repoName: String? {
         return self.repoModel?.name
     }
     
-    var repoType: RepositoryType? {
+    internal var repoType: RepositoryType? {
         return RepositoryType.getCase(string: self.repoModel?.owner?.type)
     }
     
-    var repoDescription: String? {
+    internal var repoDescription: String? {
         return self.repoModel?.repoDescription
     }
     
-    var repoStatus: String? {
+    internal var repoStatus: String? {
         return (self.repoModel?.isPrivate ?? false) ? "Public" : "Private"
     }
     
-    var repoURL: String? {
+    internal var repoURL: String? {
         guard let url = self.repoModel?.htmlURL, !url.isEmpty  else {
             self.delegate?.hiddenOpenRepoButton()
             return nil

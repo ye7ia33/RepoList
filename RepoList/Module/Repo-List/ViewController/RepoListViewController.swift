@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepoListViewController: UIViewController {
+final class RepoListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     private var viewDelegate: RepoListViewProtocol?

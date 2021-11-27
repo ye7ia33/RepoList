@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepoInfoCell: UITableViewCell {
+final class RepoInfoCell: UITableViewCell {
     
     @IBOutlet private weak var ownerAvatarImage: UIImageView! {
         didSet {
